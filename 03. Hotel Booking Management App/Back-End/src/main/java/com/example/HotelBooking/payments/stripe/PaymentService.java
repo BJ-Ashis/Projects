@@ -73,7 +73,7 @@ public class PaymentService {
         String bookingReference = paymentRequest.getBookingReference();
 
         Booking booking = bookingRepository.findByBookingReference(bookingReference)
-                .orElseThrow(()-> new NotFoundException("Booing Not Found"));
+                .orElseThrow(()-> new NotFoundException("Booking Not Found"));
 
         PaymentEntity payment = new PaymentEntity();
         payment.setPaymentGateway(PaymentGateway.STRIPE);
